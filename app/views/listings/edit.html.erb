@@ -1,0 +1,50 @@
+<%= form_for @listing do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :property_type %>
+    <%= f.text_field :property_type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rooms %>
+    <%= f.number_field :rooms %>
+  </div>
+
+  <div class="field">
+    <%= f.label :capacity %>
+    <%= f.number_field :capacity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :available %>
+    <%= f.check_box :available %>
+  </div>
+
+  <div class="field">
+    <%= f.label :average_rating %>
+    <%= f.number_field :average_rating %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  check_in: 2023-10-13
+  check_out: 2023-10-13
+  listing: one
+  confirmed: false
+  duration: 1
+  total_price: 1
+  user: one
+
+two:
+  check_in: 2023-10-13
+  check_out: 2023-10-13
+  listing: two
+  confirmed: false
+  duration: 1
+  total_price: 1
+  user: two

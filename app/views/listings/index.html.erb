@@ -1,0 +1,36 @@
+<h1>Welcome to Vacation.com!</h1>
+
+<%= link_to 'Back to Home', root_path %>
+<br>
+<br>
+<%= form_tag listings_path, method: :get do %>
+  <div class="field">
+    <%= label_tag 'location', 'Location' %>
+    <%= text_field_tag 'location', params[:location] %>
+  </div>
+
+  <div class="field">
+    <%= label_tag 'availability', 'Available' %>
+    <%= check_box_tag 'availability', '1', params[:availability] %>
+  </div>
+
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<% if @listings.present? %>
+  <h2>Listings</h2>
+  <% @listings.each do |listing| %>
+    <h2><%= link_to listing.title, listing %></h2>
+    <p><strong>Location:</strong> <%= listing.location %></p>
+    <p><strong>Price:</strong> $<%= listing.price %> per night</p>
+    <p><strong>Description:</strong> <%= listing.description %></p>
+    <p><strong>Rooms:</strong> <%= listing.rooms %></p>
+    <p><strong>Capacity:</strong> <%= listing.capacity %></p>
+    <p><strong>Available:</strong> <%= listing.available ? 'Yes' : 'No' %></p>
+    <p><strong>Average Rating:</strong> <%= listing.average_rating %></p>
+    <hr>
+  <% end %>
+<% else %>
+  <p>No listings found.</p>
+<% end %>
+

@@ -1,0 +1,29 @@
+<h1>Your Bookings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Check-in Date</th>
+      <th>Check-out Date</th>
+      <!-- Other fields -->
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookings.each do |booking| %>
+      <tr>
+        <td><%= booking.check_in %></td>
+        <td><%= booking.check_out %></td>
+        <!-- Other fields -->
+        <td><%= link_to 'Show', booking %></td>
+        <td><%= link_to 'Edit', edit_booking_path(booking) %></td>
+        <td><%= link_to 'Delete', booking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Booking', new_booking_path %>

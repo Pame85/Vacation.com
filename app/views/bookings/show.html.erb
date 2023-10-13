@@ -1,0 +1,8 @@
+<h1>Booking Details</h1>
+
+<p><strong>Check-in Date:</strong> <%= @booking.check_in %></p>
+<p><strong>Check-out Date:</strong> <%= @booking.check_out %></p>
+<!-- Other fields -->
+
+<%= link_to 'Edit', edit_booking_path(@booking) %> |
+<%= link_to 'Back', bookings_path %>

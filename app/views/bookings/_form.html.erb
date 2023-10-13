@@ -1,0 +1,39 @@
+<%= form_with(model: booking, local: true) do |form| %>
+    <% if booking.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+        <ul>
+          <% booking.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= form.label :check_in %>
+      <%= form.date_field :check_in, class: 'datepicker' %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :check_out %>
+      <%= form.date_field :check_out, class: 'datepicker' %>
+    </div>
+  
+    <!-- Other fields -->
+  
+    <div class="actions">
+      <%= form.submit 'Create Booking' %>
+    </div>
+  <% end %>
+  
+  <script>
+    $(document).ready(function(){
+      $('.datepicker').datepicker({
+        format: 'yyyy-mm-dd', // Adjust the date format if needed
+        autoclose: true,
+        startDate: new Date() // Optional: Restrict dates to be in the future
+      });
+    });
+  </script>
+  
