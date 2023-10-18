@@ -45,3 +45,5 @@ group :development do
   gem 'capistrano-rake', require: false
 end
 
+gem 'ed25519', require: false
+gem 'bcrypt_pbkdf', require: false

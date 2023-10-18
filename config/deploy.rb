@@ -1,5 +1,5 @@
 # config valid for current version and patch releases of Capistrano
-lock '~> 3.17.0'
+lock '~> 3.18.0'
 
 # Change these
 set :repo_url,        'git@github.com:Pame85/Vacation.com.git'
@@ -7,7 +7,7 @@ set :user,            'deploy'
 
 # Don't change these unless you know what you're doing
 set :pty,             false
-set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa) }
+set :ssh_options,     { forward_agent: true, user: fetch(:user), keys: %w(ssh-agent -s  && ssh-add ~/.ssh/id_rsa) }
 set :nginx_use_ssl,   true
 
 ## Defaults:
