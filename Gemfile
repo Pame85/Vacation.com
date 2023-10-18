@@ -7,7 +7,7 @@ ruby "3.2.2"
 gem "rails"
 gem "sprockets-rails"
 gem "pg"
-gem "puma"
+gem "puma", "< 5.0"
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
@@ -31,5 +31,17 @@ end
 
 group :development do
   gem "web-console"
+
+  # Deployment
+  gem 'capistrano', '< 5'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano3-puma', '< 5', group: :development
+  gem 'capistrano3-nginx'
+  gem 'capistrano-rails-console'
+  gem 'capistrano-rails-tail-log'
+  gem 'capistrano-rails-db'
+  gem 'capistrano-rake', require: false
 end
 

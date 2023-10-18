@@ -1,0 +1,11 @@
+<h1>All Reviews</h1>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li>
+      <strong>Rating:</strong> <%= review.rating %><br>
+      <strong>Comment:</strong> <%= review.comment %><br>
+      <strong>User:</strong> <%= review.user.name %> <!-- Assuming you have a 'name' attribute in your User model -->
+    </li>
+  <% end %>
+</ul>

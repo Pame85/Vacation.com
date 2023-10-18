@@ -1,5 +1,5 @@
 <%= form_with(model: booking, local: true) do |form| %>
-    <% if booking.errors.any? %>
+    <% if booking.error.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
         <ul>
