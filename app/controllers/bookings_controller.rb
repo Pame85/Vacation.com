@@ -8,7 +8,7 @@ class BookingsController < ApplicationController
 
   def create
     @listing = Listing.find(params[:listing_id])
-    @booking = current_user.bookings.new(booking_params.merge(listing: @listing))
+    @booking = current_user.bookings.new(booking_params.merge(listing_id: @listing.id))
     if @booking.save
       redirect_to @booking, notice: 'Booking was successfully created.'
     else
