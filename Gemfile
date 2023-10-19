@@ -45,6 +45,5 @@ group :development do
   gem 'capistrano-rake', require: false
 end
 
-gem 'net-ssh', "7.0.0.betal"
 gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
